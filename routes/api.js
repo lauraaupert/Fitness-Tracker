@@ -26,7 +26,7 @@ module.exports = function(app) {
           res.json(response);
       }
       catch(err){
-          console.log("error occurred creating a workout: ", err)
+          console.log(err)
       }
   })
 
@@ -73,4 +73,3 @@ module.exports = function(app) {
 };
 
 
-module.exports = router;
