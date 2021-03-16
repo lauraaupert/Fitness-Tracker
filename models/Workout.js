@@ -32,14 +32,27 @@ const WorkoutSchema = new Schema({
         sets: {
             type: Number,
             required: "How many sets are you gonna do before I come for you?"
+        },
+        duration: { 
+            type: Number,
+            required: "How long before you drop dead?"
         }
+    }
     
-        // {
-        //     type: Schema.Types.ObjectId,
-        //     ref: "Exercise",
-        }
+        
+            // type: Schema.Types.ObjectId,
+            // ref: "Exercise",
+        // }
     ]
-})
+},
+    {
+        toJSON: {
+          // include any virtual properties when data is requested
+          virtuals: true
+        }
+      }
+)
+
 
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
