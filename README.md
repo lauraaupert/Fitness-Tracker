@@ -14,7 +14,7 @@ Deployed app: https://rocky-headland-95385.herokuapp.com/?id=60501b96abef8900154
 ## TABLE OF CONTENTS
 
 [Requirements](#USER)    
-[Questions](#QUESTIONS)
+[Questions](#QUESTIONS)  
 [License](#LICENSE)  
 
 ## REQUIREMENTS <a name="USER"></a>
