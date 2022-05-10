@@ -23,6 +23,8 @@ nav {
   padding: 10px;
   line-height: 3;
   font-size: 1.2rem;
+  width: 100%;
+  justify-content: space-between;
 }
 
 a,
@@ -33,7 +35,15 @@ a:visited {
   color: inherit;
 }
 
-nav a:hover{
+.tracker-link {
+  left: 50px;
+}
+
+.dashboard-link {
+  right: 50px;
+}
+
+nav a:hover {
   opacity: 0.7;
 }
 
