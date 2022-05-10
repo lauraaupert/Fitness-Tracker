@@ -1,5 +1,4 @@
-
-# Fitness Tracker	![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+# Fitness Tracker ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## DESCRIPTION
 
@@ -9,13 +8,13 @@ Technology use: Node.js, JavaScript, express.handlebars, MongoDB, Heroku, Mangoo
 
 GitHub Repository: https://github.com/lauraaupert/fitness-tracker
 
-Deployed app: https://rocky-headland-95385.herokuapp.com/?id=60501b96abef890015481d9a
+Deployed app: https://lauras-fitness-tracker.herokuapp.com/?id=60501b96abef890015481d9a
 
 ## TABLE OF CONTENTS
 
-[Requirements](#USER)    
+[Requirements](#USER)  
 [Questions](#QUESTIONS)  
-[License](#LICENSE)  
+[License](#LICENSE)
 
 ## REQUIREMENTS <a name="USER"></a>
 
@@ -23,20 +22,22 @@ When the user loads the page, they should be given the option to create a new wo
 
 The user should be able to:
 
-  * Add exercises to the most recent workout plan.
+- Add exercises to the most recent workout plan.
 
-  * Add new exercises to a new workout plan.
+- Add new exercises to a new workout plan.
 
-  * View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
+- View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
 
-  * View the total duration of each workout from the past seven workouts on the `stats` page.
+- View the total duration of each workout from the past seven workouts on the `stats` page.
 
 ## QUESTIONS <a name="QUESTIONS"></a>
+
 For additional questions, please get in touch:  
 https://github.com/lauraaupert  
 aupert.laura@gmail.com
 
 ## LICENSE
+
 MIT License
 
 Copyright (c) 2021 lauraaupert
