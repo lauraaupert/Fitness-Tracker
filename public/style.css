@@ -386,6 +386,10 @@ form > button {
   width: 350px;
 } */
 
+.workout-stats {
+  height: 170px;
+}
+
 .prev-workout button {
   margin: 10px;
 }
