@@ -22,16 +22,11 @@ function generatePalette() {
 }
 
 function populateChart(data) {
-  let durationArrays = data.map((ex) =>
-    ex.exercises.map((val) => val.duration)
-  );
-  let durations = [];
-  durationArrays.forEach((array) =>
-    durations.push(array.reduce((a, b) => a + b))
-  );
-  let pounds = calculateTotalWeight(data);
-  let workouts = workoutNames(data);
+  let pounds = Object.values(calculateTotalWeight(data));
+  let workouts = Object.keys(calculateTotalWeight(data));
   const colors = generatePalette();
+  let durations = Object.values(calculateTotalDurations(data));
+  let durationsWorkout = Object.keys(calculateTotalDurations(data));
 
   let line = document.querySelector("#canvas").getContext("2d");
   let bar = document.querySelector("#canvas2").getContext("2d");
@@ -50,6 +45,7 @@ function populateChart(data) {
 
   const labels = data.map(({ day }) => {
     const date = new Date(day);
+    console.log(date);
     return daysOfWeek[date.getDay()];
   });
 
@@ -141,7 +137,7 @@ function populateChart(data) {
   let pieChart = new Chart(pie, {
     type: "pie",
     data: {
-      labels: workouts,
+      labels: durationsWorkout,
       datasets: [
         {
           label: "Exercises Performed",
@@ -180,34 +176,35 @@ function populateChart(data) {
 }
 
 function calculateTotalWeight(data) {
-  let totals = [];
+  let weightObject = {};
 
   data.forEach((workout) => {
-    const workoutTotal = workout.exercises.reduce((total, { type, weight }) => {
+    workout.exercises.reduce((total, { type, name, weight, duration }) => {
       if (type === "resistance") {
-        return total + weight;
-      } else {
-        return total;
+        if (!weightObject.hasOwnProperty(name)) {
+          weightObject[name] = weight;
+        } else {
+          weightObject[name] += weight;
+        }
       }
     }, 0);
-
-    totals.push(workoutTotal);
   });
-
-  return totals;
+  return weightObject;
 }
 
-function workoutNames(data) {
-  let workouts = [];
+function calculateTotalDurations(data) {
+  let durationObject = {};
 
   data.forEach((workout) => {
-    workout.exercises.forEach((exercise) => {
-      workouts.push(exercise.name);
-    });
+    workout.exercises.reduce((total, { type, name, weight, duration }) => {
+      if (!durationObject.hasOwnProperty(name)) {
+        durationObject[name] = duration;
+      } else {
+        durationObject[name] += duration;
+      }
+    }, 0);
   });
-
-  // return de-duplicated array with JavaScript `Set` object
-  return [...new Set(workouts)];
+  return durationObject;
 }
 
 // get all workout data from back-end
