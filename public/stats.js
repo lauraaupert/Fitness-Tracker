@@ -64,9 +64,10 @@ function populateChart(data) {
       ],
     },
     options: {
-      responsive: true,
+      // responsive: false,
       title: {
         display: true,
+        text: "Exercise Duration",
       },
       scales: {
         xAxes: [

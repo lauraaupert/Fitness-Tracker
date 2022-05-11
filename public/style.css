@@ -382,10 +382,6 @@ form > button {
   margin-bottom: 5px;
 }
 
-/* .workout .card {
-  width: 350px;
-} */
-
 .workout-stats {
   height: 170px;
 }
@@ -441,6 +437,10 @@ form > button {
 .cardio-form,
 .resistance-form {
   padding: 10px;
+}
+
+.allcharts {
+  min-width: 225px;
 }
 
 @keyframes toast {
